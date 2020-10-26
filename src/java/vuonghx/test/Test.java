@@ -6,6 +6,8 @@
 package vuonghx.test;
 
 import java.util.List;
+import vuonghx.constants.urls.CrawlUrls;
+import vuonghx.crawler.dothethao.CategoryCrawler;
 import vuonghx.dao.category.CategoryDAO;
 import vuonghx.dao.product.ProductDAO;
 import vuonghx.entities.Category;
@@ -16,15 +18,10 @@ import vuonghx.entities.Category;
  */
 public class Test {
     public static void main(String[] args) {
-        ProductDAO dao = new ProductDAO();
+        CategoryCrawler crawler = new CategoryCrawler(null);
         
-        CategoryDAO catDao = new CategoryDAO();
+        crawler.getCategories(CrawlUrls.AO_BONG_DA_24H);
         
-        List<Category> list =  catDao.getAll("Category.findAll");
-              
-        for(Category item : list){
-            System.out.println(item.getName());
-        }
         
     }
 }
