@@ -5,23 +5,19 @@
  */
 package vuonghx.test;
 
-import java.util.List;
 import vuonghx.constants.urls.CrawlUrls;
-import vuonghx.crawler.dothethao.CategoryCrawler;
-import vuonghx.dao.category.CategoryDAO;
-import vuonghx.dao.product.ProductDAO;
-import vuonghx.entities.Category;
+import vuonghx.crawler.abd24h.AbdCategoryCrawler;
+import vuonghx.crawler.abd24h.AbdMainCrawler;
 
 /**
  *
  * @author hoxua
  */
 public class Test {
+
     public static void main(String[] args) {
-        CategoryCrawler crawler = new CategoryCrawler(null);
-        
-        crawler.getCategories(CrawlUrls.AO_BONG_DA_24H);
         
         
+        AbdMainCrawler.startCrawling();
     }
 }
